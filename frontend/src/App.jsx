@@ -5,7 +5,7 @@ export default function App() {
   // const [author,setAuthor] = useState("- Author");
 const fetchQuote = async ()=>{
   try {
-    const response = await fetch("http://localhost:5000/api/quotes");
+    const response = await fetch(`${import.meta.env.VITE_API_URL}`);
     const data = await response.json();
     setQuote(data);
   } catch (error) {
